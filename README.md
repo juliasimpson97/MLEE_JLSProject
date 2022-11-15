@@ -1,29 +1,33 @@
-# Final Project: pCO2 
+# Final Project: Prediction of Ocean pCO2 using Various Machine Learning Algorithms
 ## Machine Learning for Environmental Engineering
-Completed by Julia Simpson, with assistance from Val Bennington and Amanda Fay
+Completed by Julia Simpson
 
 Fall 2022
 
-
-
 ### <span style="color:blue">*Goal:*</span>
-#### *Predict pCO2 using sea surface salinity (SSS), sea surface temperature (SST), chorophyll-a, and mixed layer depth (MLD). Use SOCAT observations as the "true" set of values for training.* 
+#### *Predict pCO2 using sea surface salinity (SSS), sea surface temperature (SST), (possibly) chorophyll-a, and (possibly) mixed layer depth (MLD).* 
+- Use SOCAT observations as the "true" set of values for training to create a benchmark comparison using random forest (RF), eXtreme Gradient Boosting (XGB), and neural network (NN). 
+- Separately, train another NN and a convolutional long short-term memory (ConvLSTM) network on Community Earth System Model data, then use transfer learning on MPI/SOCAT data to fine-tune hyperparameters.* 
 
 ### <span style="color:blue">*Methods:*</span> 
 #### *Utilize and compare the following machine learning algorithms:*
+##### Benchmark Algorithms
 - Random forest (RF); 
 - eXtreme Gradient Boosting (XGB); and
 - Neural network (NN).
+##### Transfer Learning Tests
+- Additional neural network, maybe with same architecture as first; and
+- Convolution long short-term memory (ConvLSTM) network. 
+    *(Note that LSTM may not work well if data is not sequential enough)*
 
-*Note: Depending on time, will potentially explore an additional method from the following list: support vector regression (SVR), long short-term memory (LSTM) network, or an ensemble of RF, NN, and XGB.)*
-- *if use SVR: look at Gregor 2019 for description*
-- *if LSTM: note that this may not work well if the data is not sequential enough*
+#### *Following the training (which will be done on SOCAT and, where transfer learning is used, CESM), testing of algorithms will be conducted on non-SOCAT track data points.*
 
 ### <span style="color:blue">*Using Machine Learning Results:*</span> 
-#### *Following the training and testing of each of the above machine learning algorithms, I will compare the models and particularly examine the results of the most promising method.*
-- Compare approaches
-- Possible to apply algorithm globally for reasonable-looking pCO2 predictions? Or without input model, limited to prediction where have SOCAT observations?
-- Examine feature importance 
+#### *Compare approaches*
+- Do all algorithms lead to reasonable-looking pCO2 predictions?
+- Does the use of transfer learning lead to significant improvement in pCO2 predictions?
+- How do the two neural networks compare? Use as a window into the impact of the transfer learning.
+- How does the ConvLSTM compare with the other algorithms? Comment on the introduction of CESM into training and use of a convolutional algorithm to capture some spatio-temporal relationships.
 
 
 
