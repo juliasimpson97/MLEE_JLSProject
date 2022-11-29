@@ -8,6 +8,10 @@ Fall 2022
 #### *In Terminal*
 > cd /home/julias/MLEE_JLSProject/raw_data/
 > wget -O cesm009.tar.gz https://ndownloader.figshare.com/files/16129532
+> tar -xf cesm009.tar.gz
+> mv -f /home/julias/MLEE_JLSProject/raw_data/member_009/* /home/julias/MLEE_JLSProject/raw_data/
+> rm cesm009.tar.gz
+> rmdir member_009
 
 ### <span style="color:blue">*Goal:*</span>
 #### *Predict pCO2 using sea surface salinity (SSS), sea surface temperature (SST), chorophyll-a, and mixed layer depth (MLD).* 
