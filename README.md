@@ -4,8 +4,13 @@ Completed by Julia Simpson
 
 Fall 2022
 
+### <span style="color:blue">*Import Data:*</span> 
+#### *In Terminal*
+> cd /home/julias/MLEE_JLSProject/raw_data/
+> wget -O cesm009.tar.gz https://ndownloader.figshare.com/files/16129532
+
 ### <span style="color:blue">*Goal:*</span>
-#### *Predict pCO2 using sea surface salinity (SSS), sea surface temperature (SST), (possibly) chorophyll-a, and (possibly) mixed layer depth (MLD).* 
+#### *Predict pCO2 using sea surface salinity (SSS), sea surface temperature (SST), chorophyll-a, and mixed layer depth (MLD).* 
 - Use SOCAT observations as the "true" set of values for training to create a benchmark comparison using random forest (RF), eXtreme Gradient Boosting (XGB), and neural network (NN). 
 - Separately, train another NN and a convolutional long short-term memory (ConvLSTM) network on Community Earth System Model data, then use transfer learning on MPI/SOCAT data to fine-tune hyperparameters.* 
 
